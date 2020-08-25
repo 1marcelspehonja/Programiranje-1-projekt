@@ -111,16 +111,16 @@ vzorec_stat = re.compile(
     r'<tr id="per_game.2019" class="full_table" ><th scope="row" class="left " data-stat="season" >'
     r'<a href="/players/(?P<geslo>.*?)/gamelog/2019/">2018-19</a>.*?'        #geslo
     r'<td class="left " data-stat="team_id" >(<a href="/teams/.{3}/2019.html">|)(?P<ekipa>.*?)(</a></td>|</td>).*?' #ekipa
-    r'<td class="center " data-stat="pos" >(?P<pozicija>.*?)</td>'         #pozicija
-    r'<td class="right " data-stat="g" >(?P<GP>.*?)</td>.*?'                  #igranih tekem
-    r'<td class="right " data-stat="mp_per_g" >(?P<MP_game>.*?)</td>.*?'  #minute na tekmo
-    r'<td class="right " data-stat="fg3_per_g" >(?P<Tri_FG>.*?)</td>.*?'   #zadete 3 na tekmo
-    r'<td class="right .{0,2}" data-stat="fg3_pct" >(?P<Tri_pct>.*?)</td>.*?'      #procent meta za 3
-    r'<td class="right " data-stat="ft_per_g" >(?P<FT_game>.*?)</td>.*?'     #prosti meti na tekmo    
-    r'<td class="right .{0,2}" data-stat="ft_pct" >(?P<FT_pct>.*?)</td>.*?'     #prosti meti procent
-    r'<td class="right " data-stat="trb_per_g" >(?P<RPG>.*?)</td>'      #skoki
-    r'<td class="right " data-stat="ast_per_g" >(?P<APG>.*?)</td>.*?'      #asistence 
-    r'<td class="right " data-stat="pts_per_g" >(?P<PPG>.*?)</td></tr>'   #točke
+    r'<td class="center " data-stat="pos" >(<strong>|)(?P<pozicija>.*?)(</strong>|)</td>'         #pozicija
+    r'<td class="right " data-stat="g" >(<strong>|)(?P<GP>.*?)(</strong>|)</td>.*?'            #igranih tekem
+    r'<td class="right " data-stat="mp_per_g" >(<strong>|)(?P<MP_game>.*?)(</strong>|)</td>.*?'  #minute na tekmo
+    r'<td class="right " data-stat="fg3_per_g" >(<strong>|)(?P<Tri_FG>.*?)(</strong>|)</td>.*?'   #zadete 3 na tekmo
+    r'<td class="right .{0,2}" data-stat="fg3_pct" >(<strong>|)(?P<Tri_pct>.*?)(</strong>|)</td>.*?'      #procent meta za 3
+    r'<td class="right " data-stat="ft_per_g" >(<strong>|)(?P<FT_game>.*?)(</strong>|)</td>.*?'     #prosti meti na tekmo    
+    r'<td class="right .{0,2}" data-stat="ft_pct" >(<strong>|)(?P<FT_pct>.*?)(</strong>|)</td>.*?'     #prosti meti procent
+    r'<td class="right " data-stat="trb_per_g" >(<strong>|)(?P<RPG>.*?)(</strong>|)</td>'      #skoki
+    r'<td class="right " data-stat="ast_per_g" >(<strong>|)(?P<APG>.*?)(</strong>|)</td>.*?'      #asistence 
+    r'<td class="right " data-stat="pts_per_g" >(<strong>|)(?P<PPG>.*?)(</strong>|)</td></tr>'   #točke
     )
 
 
@@ -151,6 +151,6 @@ zapisi_json(zdruzen_seznam_koncno, 'urejeni_podatki.json')
 zapisi_csv(zdruzen_seznam_koncno,
     ['ID', 'geslo', 'ime_priimek', 'višina', 'teža', 'rojstvo', 'država', 'ekipa', 'pozicija', 'GP', 'MP_game',
     'Tri_FG', 'Tri_pct', 'FT_game', 'FT_pct', 'RPG', 'APG', 'PPG'], 
-    'urejeni-podatki.csv'
+    'urejeni_podatki.csv'
 )
 
