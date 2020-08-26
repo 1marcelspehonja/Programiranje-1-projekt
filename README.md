@@ -1,5 +1,5 @@
 # Programiranje-1-projekt
-Projekt pri predmetu programiranje 1 (2019/20)
+Projekt pri predmetu programiranje 1 (2019/20) <br>
 Avtor: Marcel Špehonja
 
 # Analiza igralcev NBA v sezoni 2018/19
